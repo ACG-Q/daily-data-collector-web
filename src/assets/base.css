@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+:root {
+    /* 颜色体系 */
+    --primary: #2563eb; /* 主品牌色 */
+    --primary-rgb: 37, 99, 235; /* 主品牌色RGB */
+    --primary-hover: #1d4ed8; /* 悬停色 */
+
+    --active: #10b981;
+    --danger: #ef4444;
+    --warning: #f59e0b;
+    --info: #3b82f6;
+    --disabled: #9ca3af;
+    --success: #22c55e;
+    --active-rgb: 16, 185, 129;
+    --danger-rgb: 239, 68, 68;
+    --warning-rgb: 245, 158, 11;
+    --info-rgb: 59, 130, 246;
+    --disabled-rgb: 156, 163, 175;
+    --success-rgb: 34, 197, 94;
+
+    --active-bg: rgba(var(--primary-rgb), 0.1);
+    --danger-bg: rgba(var(--danger-rgb), 0.1);
+    --warning-bg: rgba(var(--warning-rgb), 0.1);
+    --info-bg: rgba(var(--info-rgb), 0.1);
+    --disabled-bg: rgba(var(--disabled-rgb), 0.1);
+    --success-bg: rgba(var(--success-rgb), 0.1);
+
+
+    --text-primary: #1e293b; /* 主文本 */
+    --text-secondary: #64748b; /* 次要文本 */
+    --bg: #f8fafc; /* 页面背景 */
+    --bg-secondary: #f1f5f9;
+    --card-bg: #ffffff; /* 卡片背景 */
+    --border: #e2e8f0; /* 边框颜色 */
+
+    /* 尺寸体系 */
+    --radius-sm: 4px; /* 小圆角 */
+    --radius-md: 8px; /* 中圆角 */
+    --radius-lg: 12px; /* 大圆角 */
+
+    /* 阴影体系 */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+
+    /* 间距体系 */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+
+    /* 字体体系 */
+    --font-size-xs: 0.25rem;
+    --font-size-sm: 0.5rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 1.5rem;
+    --font-size-xl: 2rem;
+
+    font-family: 'Inter', system-ui, Avenir, sans-serif;
+    line-height: 1.6;
+}
+
+
+/* 清除所有元素的内外边距 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* 统一盒模型 */
+}
+
+/* 清除列表样式 */
+ul, ol {
+    list-style: none;
+}
+
+/* 清除链接默认样式 */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 清除表单元素默认样式 */
+input, button, textarea, select {
+    font: inherit;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+/* 清除图片默认对齐和边框 */
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+/* 清除表格默认间距 */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* 清除标题默认加粗 */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+
+h4 {
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+h5 {
+    font-size: 0.8rem;
+    margin-bottom: 0.1rem;
+}
+
+h6 {
+    font-size: 0.6rem;
+    margin-bottom: 0.05rem;
+}
+
+/* 弹性布局工具类 */
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 卡片通用样式 */
+.card-base {
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+    padding: var(--space-md);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border);
+}
+
+/* 文本颜色类 */
+.text-primary {
+    color: var(--text-primary);
+}
+
+.text-secondary {
+    color: var(--text-secondary);
+}
+
+/* 新增按钮样式 */
+.button {
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-md);
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+        background-color: var(--primary-hover);
+    }
+
+    &:disabled {
+        background-color: var(--disabled);
+        cursor: not-allowed;
+    }
+}
+
+/* 新增表格样式 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: var(--space-md);
+
+    th, td {
+        padding: var(--space-sm);
+        border: 1px solid var(--border);
+        text-align: left;
+    }
+
+    th {
+        background-color: var(--bg-secondary);
+        font-weight: 600;
+    }
+}
+
+/* 新增表单输入样式 */
+input, textarea, select {
+    width: 100%;
+    padding: var(--space-sm);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+    transition: border-color 0.2s ease;
+
+    &:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 2px rgba(var(--primary-rgb), 0.1);
+    }
+}
+
+/* 新增卡片样式 */
+.card {
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+    padding: var(--space-md);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border);
+    margin-bottom: var(--space-md);
+}
+
+/* 新增 toast 提示样式 */
+.toast {
+    position: fixed;
+    bottom: var(--space-lg);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary);
+    color: white;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    &.show {
+        opacity: 1;
+    }
+}
+
+/* 新增加载动画样式 */
+.loader {
+    border: 3px solid var(--border);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    html {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+
+    header {
+        padding: var(--space-md);
+
+        nav {
+            gap: var(--space-md);
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    html {
+        font-size: 12px;
+    }
+
+    header {
+        flex-direction: column;
+
+        nav {
+            margin: var(--space-md) 0 0;
+            flex-wrap: wrap;
+        }
+    }
+}
+
+@media screen and (max-width: 320px) {
+    html {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 240px) {
+    html {
+        font-size: 8px;
+    }
+}
+
+@media screen and (max-width: 160px) {
+    html {
+        font-size: 6px;
+    }
+}
+
+@media screen and (max-width: 120px) {
+    html {
+        font-size: 4px;
+    }
+}
+
+@media screen and (max-width: 80px) {
+    html {
+        font-size: 2px;
+    }
+}
+
+@media screen and (max-width: 40px) {
+    html {
+        font-size: 1px;
+    }
+}
+
+@media screen and (max-width: 20px) {
+    html {
+        font-size: 0.5px;
+    }
+}
